@@ -1,0 +1,4 @@
+{
+    "omnisharp.enableImportCompletion": true,
+    "omnisharp.organizeImportsOnFormat": true
+}
