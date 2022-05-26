@@ -15,5 +15,7 @@ namespace APIDotNet.Data
         }
 
         public DbSet<AppUser> Users { get; set; }
+
+        public DbSet<NationalPark> NationalParks { get; set; }
     }
 }

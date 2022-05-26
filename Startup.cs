@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using APIDotNet.Data;
+using APIDotNet.Mapper;
+using APIDotNet.Repository;
+using APIDotNet.Repository.IRepository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +37,8 @@ namespace API
             });
 
             services.AddControllers();
+            services.AddScoped<INationalParkRepository, NationalParkRepository>();
+            services.AddAutoMapper(typeof(ParkyMappings));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
