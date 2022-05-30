@@ -39,7 +39,7 @@ namespace APIDotNet.Repository
 
         public bool NationalParkExists(string name)
         {
-            bool value = _db.NationalParks.Any(a => a.Name.ToLower().Trim() == name.Trim());
+            bool value = _db.NationalParks.Any(a => a.Name.ToLower().Trim().Equals(name.ToLower().Trim()));
             return value;
         }
 
